@@ -22,3 +22,8 @@ jobs:
       run: docker build -t client client/. 
     - name: Run Tests
       run: docker run client yarn run test:unit
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
