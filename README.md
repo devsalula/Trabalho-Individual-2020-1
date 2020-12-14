@@ -1,36 +1,3 @@
-# Solução do Trabalho
-
-Para poder rodar a API, comece rodando os seguintes comandos:
-
-```
-docker-compose build
-```
-- Para poder criar um build novo da api e do banco de dados
-
-Caso esteja rodando pela primeira vez, rode o seguinte comando:
-```
-docker-compose run api rails db:create db:migrate
-```
-- Para poder criar e fazer a migração do banco de dados
-
-Para rodar a API defitivamente:
-```
-docker-compose up
-```
-- Assim a API roda por completo, podendo receber requisições.
-
-Para poder rodar o Front End, basta rodar:
-
-```
-docker build -t client .
-```
-- Cria um build do Front end
-
-```
-docker run -it -p 8080:8080 client
-```
-- Roda o Front End
-
 # Trabalho Individual - GCES - 2020/1
 
 A Gestão de Configuração de Software é parte fundamental no curso de GCES, e dominar os conhecimentos de configuração de ambiente, containerização, virtualização, integração e deploy contínuo tem se tornado cada vez mais necessário para ingressar no mercado de trabalho.
