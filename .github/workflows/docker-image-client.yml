@@ -15,7 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file client/Dockerfile --tag client:$(date +%s)
-    
+      run: docker build . --file client/Dockerfile --tag client 
     - name: Run Tests
       run: docker run client yarn run test:unit
