@@ -2,8 +2,12 @@ name: Docker Image CI
 
 on:
   push:
+    paths:
+      - "api/*"
     branches: [ master ]
   pull_request:
+    paths:
+      - "api/*"
     branches: [ master ]
 
 jobs:
@@ -22,8 +26,3 @@ jobs:
     
     - name: Run Tests
       run: docker-compose run api rails test
-
-    - name: Code Climate Coverage Action
-      uses: paambaati/codeclimate-action@v2.7.5
-      env:
-        CC_TEST_REPORTER_ID: ${{secrets.CODE_CLIMATE_ID}}
